@@ -57,13 +57,16 @@ const dateFormat = "DD.MM.YYYY";
 
 <template>
   <a-config-provider :locale="ruRu">
-    <a-card :title="warehouseLocal.name" class="card">
-      <template #extra>
-        <span class="grey">ID {{ warehouseLocal.ID }}</span>
-      </template>
-
+    <a-card class="card">
       <a-form ref="form" layout="vertical">
         <a-row :gutter="24">
+          <a-col :span="5">
+            <div class="card__label">
+              <span class="big-size">{{ warehouseLocal.name }}</span>
+              <span class="grey">ID {{ warehouseLocal.ID }}</span>
+            </div>
+          </a-col>
+
           <a-col :span="4">
             <a-form-item
               label="Коэффициент до"
@@ -102,6 +105,13 @@ const dateFormat = "DD.MM.YYYY";
               </a-checkbox>
             </a-form-item>
           </a-col>
+
+<!--          <a-col :span="10">-->
+<!--            <div class="card__label">-->
+<!--              <span class="big-size">{{ warehouseLocal.name }}</span>-->
+<!--              <span class="grey">ID {{ warehouseLocal.ID }}</span>-->
+<!--            </div>-->
+<!--          </a-col>-->
         </a-row>
       </a-form>
     </a-card>
@@ -111,6 +121,17 @@ const dateFormat = "DD.MM.YYYY";
 <style scoped>
 .card {
   background-color: rgba(0, 0, 0, 0.01);
+}
+
+.card__label {
+  display: flex;
+  flex-direction: column;
+}
+
+.big-size {
+  color: rgba(0, 0, 0, 0.88);
+  font-weight: 600;
+  font-size: 16px;
 }
 
 .grey {
