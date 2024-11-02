@@ -87,8 +87,17 @@ function initValues() {
   const getCompanySelected = localStorage.getItem("company_selected_limit");
   companySelected.value = JSON.parse(getCompanySelected) || JSON.stringify(companyArray[0]);
 
-  warehousesSelected.value = [];
-  warehouses.value = [];
+  const getWarehousesSelect = localStorage.getItem(fieldCompanies("warehouses_selected_limit"));
+  warehousesSelected.value = getWarehousesSelect ? JSON.parse(getWarehousesSelect) : [];
+
+  const getWarehouses = localStorage.getItem(fieldCompanies("warehouses_limit"));
+
+  const resultWarehouses = getWarehouses ? JSON.parse(getWarehouses) : [];
+  warehouses.value = resultWarehouses.map(item => ({
+    ...item,
+    date: dayjs(item.date)
+  }));
+
   filteredDataFinish.value = [];
 }
 
@@ -103,6 +112,10 @@ const warehousesOptions = ref([]);
 const warehousesSelected = ref([]);
 
 const warehouses = ref([]);
+
+watch(warehouses, (newValue) => {
+  localStorage.setItem(fieldCompanies("warehouses_limit"), JSON.stringify(newValue));
+}, { deep: true });
 
 // ПОЛУЧАЕМ ВЕСЬ СПИСОК СКЛАДОВ (БЕЗ ПАРАМЕТРОВ)
 watch(transformedCompanySelected, (newValue) => {
@@ -128,6 +141,9 @@ watch(transformedCompanySelected, (newValue) => {
 }, { immediate: true });
 
 watch(warehousesSelected, (newValue) => {
+  // Сохранить выбранные склады
+  localStorage.setItem(fieldCompanies("warehouses_selected_limit"), JSON.stringify(newValue));
+
   const newArray = newValue.map((warehouse) => JSON.parse(warehouse));
 
   // Создаем временный массив, чтобы сохранять итоговый результат

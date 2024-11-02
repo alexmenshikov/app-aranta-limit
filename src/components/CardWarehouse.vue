@@ -105,13 +105,6 @@ const dateFormat = "DD.MM.YYYY";
               </a-checkbox>
             </a-form-item>
           </a-col>
-
-<!--          <a-col :span="10">-->
-<!--            <div class="card__label">-->
-<!--              <span class="big-size">{{ warehouseLocal.name }}</span>-->
-<!--              <span class="grey">ID {{ warehouseLocal.ID }}</span>-->
-<!--            </div>-->
-<!--          </a-col>-->
         </a-row>
       </a-form>
     </a-card>
