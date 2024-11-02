@@ -137,4 +137,8 @@ const dateFormat = "DD.MM.YYYY";
 .grey {
   color: rgba(0, 0, 0, 0.5);
 }
+
+.ant-form-item {
+  margin-bottom: 4px;
+}
 </style>
