@@ -248,13 +248,20 @@ async function sendMessageToTelegram(options, status) {
 
   const acceptance = coefficient === 0 ? "Бесплатно" : `x${ coefficient }`;
 
+  // const formattedMessage =
+  //   `${ status ? '*Лимит найден 🟢*' : '*Лимит удалён 🔴*' }\n` +
+  //   `${ getCurrentDateTime() }\n` +
+  //   `\n` +
+  //   `*Дата:* ${ dayjs(date).format('DD.MM.YYYY') }\n` +
+  //   `*Поставка:* ${ warehouseName }, ${ boxTypeName }\n` +
+  //   `*Приёмка:* ${ acceptance }`;
+
   const formattedMessage =
-    `${ status ? '*Лимит найден 🟢*' : '*Лимит удалён 🔴*' }\n` +
-    `${ getCurrentDateTime() }\n` +
+    `${ status ? '🟢' : '🔴' } ${ warehouseName }\n` +
+    `${ dayjs(date).format('DD.MM.YYYY') }\n` +
+    `${ acceptance }\n` +
     `\n` +
-    `*Дата:* ${ dayjs(date).format('DD.MM.YYYY') }\n` +
-    `*Поставка:* ${ warehouseName }, ${ boxTypeName }\n` +
-    `*Приёмка:* ${ acceptance }`;
+    `${ getCurrentDateTime() }`;
 
   try {
     await axios.post(url, {
