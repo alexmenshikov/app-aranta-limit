@@ -202,7 +202,7 @@ function coefficientsGet() {
         return warehouses.value.some(whItem => {
           const isWarehouse = resItem.warehouseID === whItem.ID;
 
-          const isDate = dayjs(resItem.date).format("YYYY-MM-DD") === dayjs(whItem.date).format("YYYY-MM-DD");
+          const isDate = dayjs(resItem.date).format("YYYY-MM-DD") >= dayjs(whItem.date).format("YYYY-MM-DD");
 
           const isWithinCoefficientRange = resItem.coefficient >= whItem.coefficientFrom && resItem.coefficient <= whItem.coefficientTo;
 

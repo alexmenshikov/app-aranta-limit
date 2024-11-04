@@ -53,6 +53,11 @@ watch(warehouseLocal, (newValue) => {
 
 // ФОРМАТ ОТОБРАЖЕНИЯ ДАТЫ
 const dateFormat = "DD.MM.YYYY";
+
+const presets = ref([
+  { label: 'Сегодня', value: dayjs().utc().add(0, 'day').startOf('day') },
+  { label: 'Следующая неделя', value: dayjs().utc().add(7, 'day').startOf('day') },
+]);
 </script>
 
 <template>
@@ -86,6 +91,7 @@ const dateFormat = "DD.MM.YYYY";
               <a-date-picker
                 v-model:value="warehouseLocal.date"
                 :format="dateFormat"
+                :presets="presets"
               />
             </a-form-item>
           </a-col>
