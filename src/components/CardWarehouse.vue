@@ -58,6 +58,7 @@ const presets = ref([
   { label: 'Сегодня', value: dayjs().utc().add(0, 'day').startOf('day') },
   { label: 'Следующая неделя', value: dayjs().utc().add(7, 'day').startOf('day') },
 ]);
+
 </script>
 
 <template>
@@ -92,7 +93,17 @@ const presets = ref([
                 v-model:value="warehouseLocal.date"
                 :format="dateFormat"
                 :presets="presets"
+                :showToday="false"
               />
+            </a-form-item>
+          </a-col>
+
+
+          <a-col :span="3">
+            <a-form-item label="Поиск" name="searchWithinWeek">
+              <a-checkbox v-model:checked="warehouseLocal.searchWithinWeek">
+                Только 7 дней
+              </a-checkbox>
             </a-form-item>
           </a-col>
 

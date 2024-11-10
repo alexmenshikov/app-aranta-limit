@@ -167,6 +167,7 @@ watch(warehousesSelected, (newValue) => {
         date: dayjs().utc().startOf('day'),
         deliveryTypeBox: true,
         deliveryTypeMonopallet: false,
+        searchWithinWeek: false
       });
     }
   });
@@ -202,7 +203,11 @@ function coefficientsGet() {
         return warehouses.value.some(whItem => {
           const isWarehouse = resItem.warehouseID === whItem.ID;
 
-          const isDate = dayjs(resItem.date).format("YYYY-MM-DD") >= dayjs(whItem.date).format("YYYY-MM-DD");
+          const resDate = dayjs(resItem.date).format("YYYY-MM-DD");
+          const whDate = dayjs(whItem.date).format("YYYY-MM-DD");
+          const isDate = whItem.searchWithinWeek
+            ? resDate >= whDate && resDate <= dayjs(whItem.date).add(7, 'day').format("YYYY-MM-DD")
+            : resDate >= whDate;
 
           const isWithinCoefficientRange = resItem.coefficient >= whItem.coefficientFrom && resItem.coefficient <= whItem.coefficientTo;
 
