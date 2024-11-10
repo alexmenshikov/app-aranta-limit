@@ -55,8 +55,8 @@ watch(warehouseLocal, (newValue) => {
 const dateFormat = "DD.MM.YYYY";
 
 const presets = ref([
-  { label: 'Сегодня', value: dayjs().utc().add(0, 'day').startOf('day') },
-  { label: 'Следующая неделя', value: dayjs().utc().add(7, 'day').startOf('day') },
+  { label: 'Сегодня', value: dayjs().utc().local().add(0, 'day').startOf('day') },
+  { label: 'Следующая неделя', value: dayjs().utc().local().add(7, 'day').startOf('day') },
 ]);
 
 </script>
