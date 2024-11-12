@@ -164,7 +164,7 @@ watch(warehousesSelected, (newValue) => {
         ...parsedWarehouse,
         coefficientFrom: 0,
         coefficientTo: 2,
-        date: dayjs().utc().startOf('day'),
+        date: dayjs().startOf('day'),
         deliveryTypeBox: true,
         deliveryTypeMonopallet: false,
         searchWithinWeek: false
@@ -199,7 +199,7 @@ function coefficientsGet() {
     }
   })
     .then(response => {
-      const filteredData = response.data.filter(resItem => {
+      const filteredData = response.data?.filter(resItem => {
         return warehouses.value.some(whItem => {
           const isWarehouse = resItem.warehouseID === whItem.ID;
 
@@ -217,7 +217,7 @@ function coefficientsGet() {
         });
       });
 
-      filteredDataFinish.value = filteredData;
+      filteredDataFinish.value = filteredData ? filteredData : [];
     })
     .catch(error => {
       console.error("Ошибка при получении коэффициентов\n", error.message);

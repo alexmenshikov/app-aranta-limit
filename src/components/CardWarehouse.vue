@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from "vue";
+import {onMounted, onUnmounted, ref, watch} from "vue";
 import {
   Col as ACol,
   Form as AForm,
@@ -55,9 +55,28 @@ watch(warehouseLocal, (newValue) => {
 const dateFormat = "DD.MM.YYYY";
 
 const presets = ref([
-  { label: 'Сегодня', value: dayjs().utc().local().add(0, 'day').startOf('day') },
-  { label: 'Следующая неделя', value: dayjs().utc().local().add(7, 'day').startOf('day') },
+  { label: 'Сегодня', value: dayjs().startOf('day') },
+  { label: 'Следующая неделя', value: dayjs().add(7, 'day').startOf('day') },
 ]);
+
+const currentDateTime = ref(dayjs().date());
+
+function checkIfTheDateHasChanged() {
+  if (currentDateTime.value !== dayjs().date()) {
+    currentDateTime.value = dayjs().date();
+    warehouseLocal.value.date = warehouseLocal.value.date.add(1, 'day').startOf('day');
+  }
+}
+
+let timerId = null;
+
+onMounted(() => {
+  timerId = setInterval(checkIfTheDateHasChanged, 10000);
+});
+
+onUnmounted(() => {
+  clearInterval(timerId);
+});
 
 </script>
 
