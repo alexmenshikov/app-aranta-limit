@@ -37,21 +37,21 @@ const companyArray = [
   {
     id: 1,
     name: "ARANTA Decor",
-    apiToken: "eyJhbGciOiJFUzI1NiIsImtpZCI6IjIwMjQxMDE2djEiLCJ0eXAiOiJKV1QifQ.eyJlbnQiOjEsImV4cCI6MTc0NjI5ODM2MCwiaWQiOiIwMTkyZWJhNS1iZWI1LTdlYjktOTM1ZC00M2UwNDRiMDYzYWIiLCJpaWQiOjUzNzE1MjI2LCJvaWQiOjU3MDAwOCwicyI6MTAyNCwic2lkIjoiNGU5MzNjNTQtZGMwNi00MzlhLWEwNjYtZjVkZGYxZTA3YTQ1IiwidCI6ZmFsc2UsInVpZCI6NTM3MTUyMjZ9.jf5irfQPcQFU5PfjwZ5zMS3JJ4wxmnEhjAxuz3FqNtjDbSEkBGodsyHG_vpYd4hmZ9fIlR9XjDAG10LupdYE2Q",
+    apiToken: "eyJhbGciOiJFUzI1NiIsImtpZCI6IjIwMjUwNDE3djEiLCJ0eXAiOiJKV1QifQ.eyJlbnQiOjEsImV4cCI6MTc2MjgwMDg0MSwiaWQiOiIwMTk2YzM0NS05ZTY2LTc0MDUtYjJmNC1iNmEzOWYxYjZhOGYiLCJpaWQiOjUzNzE1MjI2LCJvaWQiOjU3MDAwOCwicyI6MTAyNCwic2lkIjoiNGU5MzNjNTQtZGMwNi00MzlhLWEwNjYtZjVkZGYxZTA3YTQ1IiwidCI6ZmFsc2UsInVpZCI6NTM3MTUyMjZ9.3QPyyRRU8JyJtPLWU2waHMCDKsEVsjJoAcwokGM_v9gb4qe_-9rE5c7q0Z5QXNAphLCSHzdKo1AAobyQYw9k-w",
     telegramToken: "7397979520:AAFH3aY5u-PO9OOegXDl_5hvv1PLUp_3eQ4",
     chatId: "-4587468459",
   },
   {
     id: 2,
     name: "Sunflowers",
-    apiToken: "eyJhbGciOiJFUzI1NiIsImtpZCI6IjIwMjQxMDE2djEiLCJ0eXAiOiJKV1QifQ.eyJlbnQiOjEsImV4cCI6MTc0NjIyNTE4MCwiaWQiOiIwMTkyZTc0OS0xODA4LTdmNDItOTlkNS0zN2I5ZjI1YzJjYjciLCJpaWQiOjk2OTgyNDY4LCJvaWQiOjQwNzg0NjMsInMiOjEwMjQsInNpZCI6IjBmMzY0NjAzLWE4MWMtNDNhZC05MjliLTJhZjMxOWFhZTczYyIsInQiOmZhbHNlLCJ1aWQiOjk2OTgyNDY4fQ.MxvB5QA1A7AB6dwINdbc4YPWLg2kPXEk9DgMCsQ0S7AgEMrY1A25MApL3dUlE1iDt99JfPAgqdWrChZVTNKjkQ",
+    apiToken: "eyJhbGciOiJFUzI1NiIsImtpZCI6IjIwMjUwNDE3djEiLCJ0eXAiOiJKV1QifQ.eyJlbnQiOjEsImV4cCI6MTc2MjgwMDgyNiwiaWQiOiIwMTk2YzM0NS02MmI2LTcyMmQtYjIwMi01OTQ2OGI2ZmI3M2YiLCJpaWQiOjk2OTgyNDY4LCJvaWQiOjQwNzg0NjMsInMiOjEwMjQsInNpZCI6IjBmMzY0NjAzLWE4MWMtNDNhZC05MjliLTJhZjMxOWFhZTczYyIsInQiOmZhbHNlLCJ1aWQiOjk2OTgyNDY4fQ.sQ-Vipbsdo6CS0NQ9UYEvbrFI0kv9fwpRKPffW39V9o8M0S7edh4Y9v5cIhCSuvdwEfmkbCFLhpK_cPwRf2KTQ",
     telegramToken: "6584534762:AAFtICID-IRygrU-pt_A_N7dA5ypkAwqCO8",
     chatId: "-4585796755",
   },
   {
-    id: 3,
+    id: 4,
     name: "Ne Vi",
-    apiToken: "eyJhbGciOiJFUzI1NiIsImtpZCI6IjIwMjQxMDE2djEiLCJ0eXAiOiJKV1QifQ.eyJlbnQiOjEsImV4cCI6MTc0NjI5ODM4NCwiaWQiOiIwMTkyZWJhNi0xYjgyLTdkY2ItYmQxMS04MTc4ZjRjYzQ4NDQiLCJpaWQiOjE5NjI0NzM2LCJvaWQiOjQxMjc0NjcsInMiOjEwMjQsInNpZCI6Ijg0YjlkNmQzLTAxMTItNDBiZi05MTZiLWVlZDFkOGY3NjBhNSIsInQiOmZhbHNlLCJ1aWQiOjE5NjI0NzM2fQ.R_EJrf3dYiaahICWbOso4reNSmdkw-nCZz6c6XjC2ZQGZlySWURbT4ZOmuuziFl39Gdyi4GMM4V-p5hB5ejjsQ",
+    apiToken: "eyJhbGciOiJFUzI1NiIsImtpZCI6IjIwMjUwNDE3djEiLCJ0eXAiOiJKV1QifQ.eyJlbnQiOjEsImV4cCI6MTc2MjgwMTI0MiwiaWQiOiIwMTk2YzM0Yi1iZDMyLTdjMDMtYjk2Yy1kODVhNmRlNzliNzkiLCJpaWQiOjE5NjI0NzM2LCJvaWQiOjQxMjc0NjcsInMiOjEwMjQsInNpZCI6Ijg0YjlkNmQzLTAxMTItNDBiZi05MTZiLWVlZDFkOGY3NjBhNSIsInQiOmZhbHNlLCJ1aWQiOjE5NjI0NzM2fQ.WkF5uw__G_ZtezJJwJVIAbN71D9DJKBgecA8cz0mDyOvTxfwk0-8X4vjoocWB5tFmvS7B4a6NptZosP4gc1CuA",
     telegramToken: "7529315847:AAGkdEUV-4uZvsauYev3WAA06YxvGUuYsd0",
     chatId: "-4562130542",
   },
@@ -125,6 +125,8 @@ watch(transformedCompanySelected, (newValue) => {
     }
   })
     .then(response => {
+      console.log(response.data);
+
       const transformData = response.data.map((warehouse) => ({
         ID: warehouse.ID,
         name: warehouse.name,
